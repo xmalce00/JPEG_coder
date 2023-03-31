@@ -19,8 +19,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Graphics.MainWindowController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="820.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Graphics.MainWindowController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
@@ -54,13 +53,21 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button mnemonicParsing="false" onAction="#showOriginalRed" prefWidth="100.0" text="Red" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-                  <Button mnemonicParsing="false" onAction="#showOriginalBlue" prefWidth="100.0" text="Blue" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-                  <Button mnemonicParsing="false" onAction="#showOriginalY" prefWidth="100.0" text="Y" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-                  <Button mnemonicParsing="false" onAction="#showOriginalCr" prefWidth="100.0" text="Cr" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-                  <Button mnemonicParsing="false" onAction="#showOriginalGreen" prefWidth="100.0" text="Green" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-                  <Button mnemonicParsing="false" onAction="#showOriginalCb" prefWidth="100.0" text="Cb" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-                  <Button mnemonicParsing="false" onAction="#Showimage" prefWidth="100.0" text="Show image" GridPane.halignment="CENTER" />
+                  <Button fx:id="showOriginalRedBtn" mnemonicParsing="false" onAction="#showOriginalRed" prefWidth="100.0" style="-fx-background-color: red;" text="Red" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="showOriginalBlueBtn" mnemonicParsing="false" onAction="#showOriginalBlue" prefWidth="100.0" style="-fx-background-color: blue;" text="Blue" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="showOriginalYBtn" mnemonicParsing="false" onAction="#showOriginalY" prefWidth="100.0" text="Y" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Button fx:id="showOriginalCrBtn" mnemonicParsing="false" onAction="#showOriginalCr" prefWidth="100.0" text="Cr" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Button fx:id="showOriginalGreenBtn" mnemonicParsing="false" onAction="#showOriginalGreen" prefWidth="100.0" style="-fx-background-color: green;" text="Green" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="showOriginalImageBtn" mnemonicParsing="false" onAction="#Showimage" prefWidth="100.0" text="Show image" GridPane.halignment="CENTER" />
                   <CheckBox fx:id="shadesofgrey" mnemonicParsing="false" text="Shades of Grey" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Original" GridPane.columnIndex="1" GridPane.halignment="CENTER">
@@ -68,6 +75,7 @@
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Text>
+                  <Button fx:id="showOriginalCbBtn" mnemonicParsing="false" onAction="#showOriginalCb" prefWidth="100.0" text="Cb" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
                </children>
                <padding>
                   <Insets left="5.0" right="5.0" top="5.0" />
@@ -91,19 +99,22 @@
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Text>
-                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#ConvertToYCbCr" text="RGB -&gt; YCbCr" GridPane.rowIndex="1" />
-                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#downSample" text="Down Sample" GridPane.rowIndex="2" />
-                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#Transform" text="Transform" GridPane.rowIndex="3" />
-                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#Quantize" text="Quantize" GridPane.rowIndex="4" />
+                  <Button fx:id="convertBtn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#ConvertToYCbCr" text="RGB -&gt; YCbCr" GridPane.rowIndex="1" />
+                  <Button fx:id="downSampleBtn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#downSample" text="Down Sample" GridPane.rowIndex="2" />
+                  <Button fx:id="transformBtn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#Transform" text="Transform" GridPane.rowIndex="3" />
+                  <Button fx:id="quantizeBtn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#Quantize" text="Quantize" GridPane.rowIndex="4" />
                   <ComboBox fx:id="samplingtype" maxWidth="1.7976931348623157E308" prefWidth="150.0" promptText="Sampling" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <children>
                         <ComboBox fx:id="transformtype" maxWidth="1.7976931348623157E308" prefWidth="150.0" promptText="Transform" HBox.hgrow="ALWAYS">
                            <HBox.margin>
-                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                              <Insets bottom="5.0" right="5.0" top="5.0" />
                            </HBox.margin>
                         </ComboBox>
-                        <Spinner fx:id="transformblocks" maxWidth="70.0" />
+                        <Spinner fx:id="transformblocks" maxWidth="70.0">
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin></Spinner>
                      </children>
                      <opaqueInsets>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -111,14 +122,14 @@
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <children>
-                        <Slider fx:id="samplingQuality" maxWidth="1.7976931348623157E308" showTickLabels="true" showTickMarks="true" HBox.hgrow="ALWAYS" />
-                        <TextField fx:id="samplingQualityField" maxWidth="50.0" prefWidth="50.0" />
+                        <Slider fx:id="quantizeQuality" maxWidth="1.7976931348623157E308" showTickLabels="true" showTickMarks="true" HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="quantizeQualityField" maxWidth="50.0" prefWidth="50.0" />
                      </children>
                   </HBox>
                   <CheckBox fx:id="showsteps" mnemonicParsing="false" text="Show steps" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
                </children>
                <padding>
-                  <Insets left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </GridPane>
             <GridPane hgap="5.0" vgap="5.0">
@@ -134,10 +145,10 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#convertToRGB" text="YCbCr -&gt; RGB" GridPane.rowIndex="4" />
-                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#oversample" text="Over Sample" GridPane.rowIndex="3" />
-                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#itransform" text="ITransform" GridPane.rowIndex="2" />
-                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#iquantize" text="IQuantize" GridPane.rowIndex="1" />
+                  <Button fx:id="iConvertBtn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#convertToRGB" text="YCbCr -&gt; RGB" GridPane.rowIndex="4" />
+                  <Button fx:id="overSampleBtn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#oversample" text="Over Sample" GridPane.rowIndex="3" />
+                  <Button fx:id="iTransformBtn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#itransform" text="ITransform" GridPane.rowIndex="2" />
+                  <Button fx:id="iQuantizeBtn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#iquantize" text="IQuantize" GridPane.rowIndex="1" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Decode" GridPane.columnSpan="2147483647">
                      <font>
                         <Font name="System Bold" size="15.0" />
@@ -148,16 +159,19 @@
                   <Insets left="5.0" right="5.0" top="5.0" />
                </padding>
             </GridPane>
-            <GridPane>
+            <GridPane hgap="5.0" vgap="5.0">
               <columnConstraints>
                 <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Objective Quality" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER">
@@ -165,15 +179,28 @@
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Text>
-                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#countquality" text="Count" GridPane.rowIndex="1" GridPane.rowSpan="2147483647" />
+                  <Button fx:id="countParamsBtn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#countquality" text="Count PSNR" GridPane.rowIndex="1" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="MSF" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="PSNR" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <TextField fx:id="qualityMSF" editable="false" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <TextField fx:id="qualityPsNR" editable="false" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="PSNR / SAE" GridPane.rowIndex="3" />
+                  <TextField fx:id="qualityMSF" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Button fx:id="countSSIMparamsBtn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#countSSIM" text="Count SSIM" GridPane.rowIndex="4" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="SSIM" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="MSSIM" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <ComboBox fx:id="qualityType" prefWidth="150.0" GridPane.rowIndex="2" />
+                  <ComboBox fx:id="qualityTypeSSIM" prefWidth="150.0" GridPane.rowIndex="5" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="MAE" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <TextField fx:id="qualityPSNR" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="qualityMAE" editable="false" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <TextField fx:id="qualitySAE" editable="false" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <TextField fx:id="qualitySSIM" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <TextField fx:id="qualityMSSIM" editable="false" GridPane.columnIndex="2" GridPane.rowIndex="5" />
                </children>
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
             </GridPane>
             <GridPane alignment="CENTER" hgap="5.0" vgap="5.0">
                <columnConstraints>
@@ -187,19 +214,28 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Button mnemonicParsing="false" onAction="#showModifiedRed" prefWidth="100.0" text="Red" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-                  <Button mnemonicParsing="false" onAction="#showModifiedBlue" prefWidth="100.0" text="Blue" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-                  <Button mnemonicParsing="false" onAction="#showModifiedY" prefWidth="100.0" text="Y" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-                  <Button mnemonicParsing="false" onAction="#showModifiedCr" prefWidth="100.0" text="Cr" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-                  <Button mnemonicParsing="false" onAction="#showModifiedGreen" prefWidth="100.0" text="Green" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-                  <Button mnemonicParsing="false" onAction="#showModifiedCb" prefWidth="100.0" text="Cb" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-                  <Button mnemonicParsing="false" onAction="#showModifiedRGB" prefWidth="100.0" text="RGB" GridPane.halignment="CENTER" />
+                  <Button fx:id="showModifiedRedBtn" mnemonicParsing="false" onAction="#showModifiedRed" prefWidth="100.0" style="-fx-background-color: red;" text="Red" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="showModifiedBlueBtn" mnemonicParsing="false" onAction="#showModifiedBlue" prefWidth="100.0" style="-fx-background-color: blue;" text="Blue" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="showModifiedYBtn" mnemonicParsing="false" onAction="#showModifiedY" prefWidth="100.0" text="Y" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Button fx:id="showModifiedGreenBtn" mnemonicParsing="false" onAction="#showModifiedGreen" prefWidth="100.0" style="-fx-background-color: green;" text="Green" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="showModifiedCbBtn" mnemonicParsing="false" onAction="#showModifiedCb" prefWidth="100.0" text="Cb" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Button fx:id="showModifiedImageBtn" mnemonicParsing="false" onAction="#showModifiedRGB" prefWidth="100.0" text="RGB" GridPane.halignment="CENTER" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Modified" GridPane.columnIndex="1" GridPane.halignment="CENTER">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Text>
+                  <Button fx:id="showModifiedCrBtn" mnemonicParsing="false" onAction="#showModifiedCr" prefWidth="100.0" text="Cr" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
                </children>
                <padding>
                   <Insets left="5.0" right="5.0" top="5.0" />

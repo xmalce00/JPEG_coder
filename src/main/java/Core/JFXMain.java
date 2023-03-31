@@ -2,12 +2,10 @@ package Core;
 
 import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 
 public class JFXMain extends Application {
     
@@ -26,7 +24,7 @@ public class JFXMain extends Application {
         mainScene = new Scene(root);
         primaryStage.setScene(mainScene);
 
-        primaryStage.setTitle("JPEG: Malcek 211264");
+        primaryStage.setTitle("JPEG: xmalce00, 211264");
         primaryStage.getIcons().add(FilePaths.favicon);
 
         primaryStage.setOnCloseRequest(windowEvent -> {
